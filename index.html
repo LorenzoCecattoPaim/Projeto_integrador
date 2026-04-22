@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auxílios Sociais no Brasil — Projeto Integrador de Humanas</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <i class="fas fa-hands-holding-heart"></i>
+        <span>Auxílios Sociais</span>
+      </a>
+
+      <!-- Menu desktop -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link">Início</a></li>
+        <li><a href="#o-que-sao" class="nav-link">O que são</a></li>
+        <li><a href="#pros" class="nav-link">Prós</a></li>
+        <li><a href="#contras" class="nav-link">Contras</a></li>
+        <li><a href="#distribuicao" class="nav-link">Distribuição</a></li>
+        <li><a href="#mapa" class="nav-link">Mapa</a></li>
+        <li><a href="#conclusao" class="nav-link">Conclusão</a></li>
+        <li><a href="#creditos" class="nav-link">Créditos</a></li>
+      </ul>
+
+      <!-- Botão hambúrguer (mobile) -->
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===================== HOME / HERO ===================== -->
+  <section class="hero" id="home">
+    <div class="hero-bg-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    <div class="hero-content reveal">
+      <span class="hero-tag">Projeto Integrador de Humanas</span>
+      <h1 class="hero-title">
+        Auxílios Sociais<br />
+        <span class="gradient-text">no Brasil</span>
+      </h1>
+      <p class="hero-subtitle">
+        Uma análise crítica e aprofundada sobre os programas de transferência de renda,
+        seus impactos na sociedade brasileira e o papel do Estado na redução da desigualdade.
+      </p>
+      <div class="hero-buttons">
+        <a href="#o-que-sao" class="btn btn-primary">
+          <i class="fas fa-arrow-down"></i> Saiba Mais
+        </a>
+        <a href="#distribuicao" class="btn btn-secondary">
+          <i class="fas fa-chart-bar"></i> Ver Dados
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">21M+</span>
+          <span class="stat-label">Famílias beneficiadas</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">R$142bi</span>
+          <span class="stat-label">Investidos por ano</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">5</span>
+          <span class="stat-label">Regiões do Brasil</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-illustration reveal">
+      <div class="illustration-card card-float-1">
+        <i class="fas fa-hand-holding-usd"></i>
+        <span>Bolsa Família</span>
+      </div>
+      <div class="illustration-card card-float-2">
+        <i class="fas fa-house-chimney-heart"></i>
+        <span>Moradia</span>
+      </div>
+      <div class="illustration-card card-float-3">
+        <i class="fas fa-utensils"></i>
+        <span>Alimentação</span>
+      </div>
+      <div class="illustration-central">
+        <i class="fas fa-map-marked-alt"></i>
+        <span>Brasil</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== O QUE SÃO AUXÍLIOS SOCIAIS ===================== -->
+  <section class="section" id="o-que-sao">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Definição</span>
+        <h2 class="section-title">O que são auxílios sociais?</h2>
+        <p class="section-desc">
+          Programas criados pelo Estado para garantir o mínimo de dignidade às populações mais vulneráveis.
+        </p>
+      </div>
+
+      <div class="definition-grid">
+        <div class="definition-text reveal">
+          <p>
+            <strong>Auxílios sociais</strong> são políticas públicas de transferência de renda ou benefícios
+            materiais direcionados a pessoas e famílias em situação de vulnerabilidade socioeconômica.
+            Eles fazem parte do sistema de proteção social do Estado, com o objetivo de reduzir a pobreza,
+            a desigualdade e garantir condições mínimas de vida digna.
+          </p>
+          <p>
+            No Brasil, esses programas são regulados pela Constituição Federal de 1988, que estabelece
+            a assistência social como direito do cidadão e dever do Estado. Eles variam desde transferências
+            diretas de dinheiro até benefícios como cesta básica, subsídio de energia elétrica e habitação popular.
+          </p>
+          <blockquote class="quote">
+            "A erradicação da pobreza e da marginalização e a redução das desigualdades sociais e regionais
+            são objetivos fundamentais da República Federativa do Brasil."
+            <cite>— Constituição Federal, Art. 3º</cite>
+          </blockquote>
+        </div>
+
+        <div class="programs-cards reveal">
+          <!-- Card Bolsa Família -->
+          <div class="program-card">
+            <div class="program-icon bg-green">
+              <i class="fas fa-hand-holding-heart"></i>
+            </div>
+            <div class="program-info">
+              <h3>Bolsa Família</h3>
+              <p>
+                Principal programa de transferência de renda do Brasil, criado em 2003 e reformulado
+                em 2021 como <strong>Auxílio Brasil</strong> e, depois, reestruturado novamente como
+                Bolsa Família em 2023. Atende famílias em situação de pobreza com renda per capita
+                de até R$ 218 mensais, condicionando o benefício à frequência escolar e ao
+                acompanhamento de saúde.
+              </p>
+              <div class="program-tags">
+                <span class="tag">Transferência de renda</span>
+                <span class="tag">Condicionalidades</span>
+                <span class="tag">Desde 2003</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Auxílio Emergencial -->
+          <div class="program-card">
+            <div class="program-icon bg-blue">
+              <i class="fas fa-shield-halved"></i>
+            </div>
+            <div class="program-info">
+              <h3>Auxílio Emergencial</h3>
+              <p>
+                Criado em 2020 durante a pandemia de COVID-19, o Auxílio Emergencial foi uma das
+                maiores ações de proteção social da história do Brasil. Beneficiou mais de
+                <strong>68 milhões de pessoas</strong>, com parcelas mensais entre R$ 300 e R$ 1.200,
+                visando proteger trabalhadores informais, desempregados e microempreendedores
+                impactados pela crise sanitária.
+              </p>
+              <div class="program-tags">
+                <span class="tag">Emergência</span>
+                <span class="tag">COVID-19</span>
+                <span class="tag">2020–2021</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card BPC -->
+          <div class="program-card">
+            <div class="program-icon bg-teal">
+              <i class="fas fa-person-cane"></i>
+            </div>
+            <div class="program-info">
+              <h3>BPC — Benefício de Prestação Continuada</h3>
+              <p>
+                Garante um salário mínimo mensal a idosos com 65 anos ou mais e a pessoas com
+                deficiência que comprovem não ter meios de prover a própria subsistência ou de
+                tê-la provida pela família, com renda familiar per capita inferior a ¼ do salário mínimo.
+              </p>
+              <div class="program-tags">
+                <span class="tag">1 salário mínimo</span>
+                <span class="tag">Idosos e PcD</span>
+                <span class="tag">Direito garantido</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PRÓS ===================== -->
+  <section class="section section-alt" id="pros">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag green">Aspectos Positivos</span>
+        <h2 class="section-title">Prós dos auxílios sociais</h2>
+        <p class="section-desc">
+          Benefícios comprovados para a sociedade e para a economia brasileira.
+        </p>
+      </div>
+
+      <div class="cards-grid">
+
+        <div class="feature-card reveal">
+          <div class="feature-icon" style="--icon-color: #16a34a;">
+            <i class="fas fa-bread-slice"></i>
+          </div>
+          <h3>Segurança Alimentar</h3>
+          <p>
+            Programas como o Bolsa Família reduziram significativamente a fome no Brasil,
+            permitindo que milhões de famílias acessem alimentação básica. O país saiu do
+            Mapa da Fome da ONU em 2014 em parte graças a essas políticas.
+          </p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon" style="--icon-color: #0ea5e9;">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3>Incentivo à Educação</h3>
+          <p>
+            As condicionalidades do Bolsa Família exigem frequência escolar mínima de 85%,
+            o que aumentou as taxas de matrícula e permanência das crianças pobres nas escolas,
+            quebrando o ciclo intergeracional de pobreza.
+          </p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon" style="--icon-color: #f59e0b;">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Estímulo à Economia Local</h3>
+          <p>
+            Cada real transferido via Bolsa Família gera em média R$ 1,78 na economia local,
+            segundo o IPEA. Isso ocorre porque os beneficiários gastam o dinheiro em comércio
+            local, aquecendo economias de municípios periféricos.
+          </p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon" style="--icon-color: #8b5cf6;">
+            <i class="fas fa-heart-pulse"></i>
+          </div>
+          <h3>Melhoria na Saúde</h3>
+          <p>
+            Acompanhamento de saúde como condicionalidade leva famílias a postos de saúde
+            regularmente. Isso reduz a mortalidade infantil, amplia a cobertura vacinal e
+            melhora indicadores de saúde pública em regiões vulneráveis.
+          </p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon" style="--icon-color: #ec4899;">
+            <i class="fas fa-scale-balanced"></i>
+          </div>
+          <h3>Redução da Desigualdade</h3>
+          <p>
+            O índice de Gini do Brasil apresentou quedas históricas entre 2003 e 2014,
+            período de expansão dos programas sociais, evidenciando sua contribuição para
+            uma distribuição de renda mais justa.
+          </p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon" style="--icon-color: #14b8a6;">
+            <i class="fas fa-child-reaching"></i>
+          </div>
+          <h3>Proteção à Infância</h3>
+          <p>
+            Crianças beneficiadas apresentam melhor desenvolvimento cognitivo e físico.
+            Pesquisas mostram que o Bolsa Família está associado à redução do trabalho
+            infantil e à maior escolaridade nas gerações seguintes.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTRAS ===================== -->
+  <section class="section" id="contras">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag red">Pontos Críticos</span>
+        <h2 class="section-title">Contras e desafios</h2>
+        <p class="section-desc">
+          Uma análise equilibrada e crítica sobre as limitações e riscos dos auxílios sociais.
+        </p>
+      </div>
+
+      <div class="cards-grid">
+
+        <div class="feature-card contra reveal">
+          <div class="feature-icon" style="--icon-color: #ef4444;">
+            <i class="fas fa-coins"></i>
+          </div>
+          <h3>Impacto Fiscal</h3>
+          <p>
+            Os programas de transferência de renda representam uma parcela significativa
+            do orçamento federal. Sem gestão eficiente, podem pressionar o déficit público
+            e comprometer outros investimentos como infraestrutura e educação.
+          </p>
+        </div>
+
+        <div class="feature-card contra reveal">
+          <div class="feature-icon" style="--icon-color: #f97316;">
+            <i class="fas fa-user-slash"></i>
+          </div>
+          <h3>Dependência sem Autonomia</h3>
+          <p>
+            Críticos apontam que, sem políticas complementares de emprego e capacitação,
+            beneficiários podem ficar presos em situação de dependência crônica, sem
+            desenvolver autonomia econômica a longo prazo.
+          </p>
+        </div>
+
+        <div class="feature-card contra reveal">
+          <div class="feature-icon" style="--icon-color: #a855f7;">
+            <i class="fas fa-file-circle-xmark"></i>
+          </div>
+          <h3>Fraudes e Cadastros Irregulares</h3>
+          <p>
+            Auditorias do TCU e CGU identificaram beneficiários em situação irregular,
+            como servidores públicos e pessoas com renda acima do limite. Isso gera
+            desperdício de recursos e injustiça com os realmente necessitados.
+          </p>
+        </div>
+
+        <div class="feature-card contra reveal">
+          <div class="feature-icon" style="--icon-color: #0ea5e9;">
+            <i class="fas fa-arrows-left-right"></i>
+          </div>
+          <h3>Descontinuidade Política</h3>
+          <p>
+            Programas sociais frequentemente sofrem com mudanças de gestão, sendo
+            reformulados, renomeados ou cortados conforme cada governo. Essa instabilidade
+            prejudica o planejamento de longo prazo das famílias beneficiárias.
+          </p>
+        </div>
+
+        <div class="feature-card contra reveal">
+          <div class="feature-icon" style="--icon-color: #84cc16;">
+            <i class="fas fa-map-location-dot"></i>
+          </div>
+          <h3>Desigualdade na Distribuição</h3>
+          <p>
+            Apesar da abrangência nacional, a distribuição dos benefícios ainda apresenta
+            disparidades regionais. Estados com maior capacidade administrativa tendem a
+            capturar mais recursos, prejudicando regiões mais carentes.
+          </p>
+        </div>
+
+        <div class="feature-card contra reveal">
+          <div class="feature-icon" style="--icon-color: #f43f5e;">
+            <i class="fas fa-chart-pie"></i>
+          </div>
+          <h3>Insuficiência dos Valores</h3>
+          <p>
+            Os valores pagos muitas vezes ficam abaixo da linha de pobreza real, insuficientes
+            para garantir uma vida digna em cidades grandes. A defasagem em relação à inflação
+            corrói o poder de compra dos beneficiários ao longo do tempo.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DISTRIBUIÇÃO NO BRASIL ===================== -->
+  <section class="section section-alt" id="distribuicao">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag blue">Dados e Números</span>
+        <h2 class="section-title">Distribuição no Brasil</h2>
+        <p class="section-desc">
+          A desigualdade regional é um dos maiores desafios para a efetividade dos programas sociais brasileiros.
+        </p>
+      </div>
+
+      <div class="distribution-grid">
+        <div class="distribution-text reveal">
+          <p>
+            O Brasil é um país de dimensões continentais e realidades muito distintas entre suas regiões.
+            O <strong>Nordeste</strong>, historicamente marcado por pobreza estrutural e seca, concentra a
+            maior proporção de beneficiários do Bolsa Família em relação à população total.
+          </p>
+          <p>
+            Já o <strong>Sul e o Sudeste</strong>, com economias mais desenvolvidas e redes de proteção
+            social mais robustas, apresentam menor dependência dos auxílios federais. No entanto, nas
+            periferias de grandes centros como São Paulo e Rio de Janeiro, a demanda é igualmente crítica.
+          </p>
+          <p>
+            O <strong>Norte</strong>, especialmente na Amazônia, enfrenta desafios logísticos imensos que
+            dificultam tanto o acesso aos benefícios quanto o monitoramento das condicionalidades.
+          </p>
+          <div class="legend-grid">
+            <div class="legend-item">
+              <span class="legend-dot" style="background: #16a34a;"></span>
+              <span>Nordeste — maior concentração</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot" style="background: #0ea5e9;"></span>
+              <span>Norte — desafios logísticos</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot" style="background: #a855f7;"></span>
+              <span>Centro-Oeste — crescimento recente</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot" style="background: #f59e0b;"></span>
+              <span>Sudeste — maior volume absoluto</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot" style="background: #14b8a6;"></span>
+              <span>Sul — menor proporção relativa</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="chart-wrapper reveal">
+          <div class="chart-tabs">
+            <button class="chart-tab active" data-chart="familias">Famílias beneficiadas</button>
+            <button class="chart-tab" data-chart="percentual">% da população</button>
+          </div>
+          <div class="chart-container">
+            <canvas id="myChart"></canvas>
+          </div>
+          <p class="chart-note">
+            <i class="fas fa-circle-info"></i>
+            Dados aproximados baseados em relatórios do MDS/SAGI (2023). Para fins educativos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MAPA ===================== -->
+  <section class="section" id="mapa">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag teal">Localização</span>
+        <h2 class="section-title">Campestre da Serra — RS</h2>
+        <p class="section-desc">
+          Município de origem dos autores deste trabalho, localizado na Serra Gaúcha, Rio Grande do Sul.
+        </p>
+      </div>
+
+      <div class="map-wrapper reveal">
+        <div class="map-info-card">
+          <div class="map-info-item">
+            <i class="fas fa-location-dot"></i>
+            <div>
+              <strong>Campestre da Serra</strong>
+              <span>Rio Grande do Sul, Brasil</span>
+            </div>
+          </div>
+          <div class="map-info-item">
+            <i class="fas fa-users"></i>
+            <div>
+              <strong>~3.700 habitantes</strong>
+              <span>Estimativa IBGE 2022</span>
+            </div>
+          </div>
+          <div class="map-info-item">
+            <i class="fas fa-mountain"></i>
+            <div>
+              <strong>Serra Gaúcha</strong>
+              <span>Região de Campos de Cima da Serra</span>
+            </div>
+          </div>
+        </div>
+        <div class="map-iframe-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56842.31285497878!2d-51.12!3d-28.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951ebded9a3d4cad%3A0xb25dc4e0a6bcebe!2sCampestre%20da%20Serra%2C%20RS!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
+            width="100%"
+            height="420"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa de Campestre da Serra, RS">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONCLUSÃO ===================== -->
+  <section class="section section-alt" id="conclusao">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag purple">Reflexão Final</span>
+        <h2 class="section-title">Conclusão</h2>
+      </div>
+
+      <div class="conclusion-wrapper">
+        <div class="conclusion-text reveal">
+          <p>
+            Os auxílios sociais representam um dos pilares mais importantes — e mais debatidos — da política
+            pública brasileira. Ao longo deste trabalho, pudemos observar que esses programas são ferramentas
+            poderosas de combate à pobreza e à desigualdade, mas que também exigem gestão eficiente,
+            transparência e políticas complementares para que seus efeitos sejam verdadeiramente transformadores.
+          </p>
+          <p>
+            A história do Bolsa Família e do Auxílio Emergencial demonstra que o Estado brasileiro é capaz
+            de mobilizar recursos e estruturas para proteger sua população nos momentos mais críticos.
+            No entanto, a dependência exclusiva de transferências de renda, sem investimentos estruturais
+            em educação de qualidade, saúde e emprego, pode limitar o potencial emancipatório dessas políticas.
+          </p>
+          <p>
+            Em um país com a diversidade e as contradições do Brasil, não existe solução simples para a
+            questão social. O que fica evidente é que <strong>abandonar as políticas de proteção social
+            significaria um retrocesso imenso</strong>, jogando milhões de pessoas de volta à miséria.
+            Ao mesmo tempo, avançar rumo a uma sociedade mais justa exige ir além dos auxílios: requer
+            reformas profundas na educação, no mercado de trabalho e na estrutura tributária.
+          </p>
+          <p>
+            A discussão sobre auxílios sociais não é ideológica — é, antes de tudo, uma questão de
+            <strong>humanidade, responsabilidade e visão de futuro</strong>.
+          </p>
+        </div>
+
+        <div class="conclusion-highlights reveal">
+          <div class="highlight-card">
+            <i class="fas fa-check-circle"></i>
+            <p>Os auxílios sociais são <strong>necessários e comprovadamente eficazes</strong> na redução da pobreza extrema.</p>
+          </div>
+          <div class="highlight-card">
+            <i class="fas fa-arrows-rotate"></i>
+            <p>Precisam ser <strong>complementados por políticas de emprego, educação e saúde</strong> para gerar autonomia.</p>
+          </div>
+          <div class="highlight-card">
+            <i class="fas fa-magnifying-glass"></i>
+            <p>Exigem <strong>monitoramento rigoroso</strong> para evitar fraudes e garantir que chegue a quem precisa.</p>
+          </div>
+          <div class="highlight-card">
+            <i class="fas fa-handshake"></i>
+            <p>São um <strong>compromisso civilizatório</strong> de uma sociedade que não aceita a miséria como destino.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CRÉDITOS ===================== -->
+  <section class="section" id="creditos">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Autoria</span>
+        <h2 class="section-title">Créditos</h2>
+        <p class="section-desc">Trabalho desenvolvido para a disciplina Projeto Integrador de Humanas.</p>
+      </div>
+
+      <div class="credits-grid">
+        <div class="credit-card reveal">
+          <div class="credit-avatar">
+            <i class="fas fa-user-graduate"></i>
+          </div>
+          <h3>Lorenzo Cecatto Paim</h3>
+          <span class="credit-role">Aluno — Pesquisa e Redação</span>
+        </div>
+        <div class="credit-card reveal">
+          <div class="credit-avatar">
+            <i class="fas fa-user-graduate"></i>
+          </div>
+          <h3>Sofia Benato Rech</h3>
+          <span class="credit-role">Aluna — Análise e Dados</span>
+        </div>
+        <div class="credit-card reveal">
+          <div class="credit-avatar">
+            <i class="fas fa-user-graduate"></i>
+          </div>
+          <h3>Pedro Michelon Siton</h3>
+          <span class="credit-role">Aluno — Design e Revisão</span>
+        </div>
+      </div>
+
+      <div class="credits-meta reveal">
+        <div class="meta-item">
+          <i class="fas fa-school"></i>
+          <span>Projeto Integrador de Humanas</span>
+        </div>
+        <div class="meta-item">
+          <i class="fas fa-book-open"></i>
+          <span>Tema: Auxílios Sociais no Brasil</span>
+        </div>
+        <div class="meta-item">
+          <i class="fas fa-calendar-days"></i>
+          <span>2024 — Campestre da Serra, RS</span>
+        </div>
+      </div>
+
+      <div class="references reveal">
+        <h4><i class="fas fa-list-ul"></i> Referências</h4>
+        <ul>
+          <li>BRASIL. Ministério do Desenvolvimento Social — <em>Bolsa Família: dados e resultados.</em> Brasília, 2023.</li>
+          <li>IPEA — Instituto de Pesquisa Econômica Aplicada. <em>Impactos do Bolsa Família na economia local.</em> 2022.</li>
+          <li>IBGE. <em>Pesquisa Nacional por Amostra de Domicílios Contínua (PNAD-C).</em> 2023.</li>
+          <li>SOUZA, Pedro H. G. F. <em>Uma História da Desigualdade no Brasil.</em> Ed. Hucitec, 2018.</li>
+          <li>CONSTITUIÇÃO DA REPÚBLICA FEDERATIVA DO BRASIL. <em>Art. 3º — Objetivos Fundamentais.</em> Brasília, 1988.</li>
+          <li>TCU — Tribunal de Contas da União. <em>Auditorias do Cadastro Único.</em> 2022.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <i class="fas fa-hands-holding-heart"></i>
+        <span>Auxílios Sociais no Brasil</span>
+      </div>
+      <p class="footer-desc">
+        Trabalho acadêmico de Projeto Integrador de Humanas.<br />
+        Campestre da Serra, Rio Grande do Sul — 2024.
+      </p>
+      <div class="footer-authors">
+        <span>Lorenzo Cecatto Paim</span>
+        <span class="dot">·</span>
+        <span>Sofia Benato Rech</span>
+        <span class="dot">·</span>
+        <span>Pedro Michelon Siton</span>
+      </div>
+      <p class="footer-copy">© 2024 — Produzido para fins educativos.</p>
+    </div>
+  </footer>
+
+  <!-- Scroll to top button -->
+  <button class="scroll-top" id="scrollTop" aria-label="Voltar ao topo">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
