@@ -259,7 +259,151 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// ---- 7. FEEDBACK VISUAL AO CLICAR NOS BOTÕES ---- 
+
+// ---- 8. SEÇÃO CAMPESTRE DA SERRA ----
+
+/**
+ * Dados reais levantados sobre beneficiários do Bolsa Família
+ * nas diferentes localidades de Campestre da Serra — RS (2024).
+ */
+const campestреData = [
+  { nome: 'Campestre (Centro)', count: 119, color: '#16a34a' },
+  { nome: 'São Manuel',         count: 68,  color: '#0ea5e9' },
+  { nome: 'São Bernardo',       count: 84,  color: '#a855f7' },
+  { nome: 'Serra do Meio',      count: 41,  color: '#f59e0b' },
+  { nome: 'Guacho',             count: 30,  color: '#14b8a6' },
+];
+
+const CAMP_POP   = 3311;
+const CAMP_TOTAL = campestреData.reduce((s, d) => s + d.count, 0); // 342
+const CAMP_PCT   = ((CAMP_TOTAL / CAMP_POP) * 100).toFixed(1);
+
+/** Anima um número do 0 até o valor final. */
+function animateCount(el, target, suffix = '', decimals = 0) {
+  const duration = 1400;
+  const start    = performance.now();
+
+  function step(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const ease     = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+    const value    = decimals
+      ? (ease * target).toFixed(decimals)
+      : Math.round(ease * target).toLocaleString('pt-BR');
+    el.textContent = value + suffix;
+    if (progress < 1) requestAnimationFrame(step);
+  }
+
+  requestAnimationFrame(step);
+}
+
+/** Inicializa os contadores e as barras de ranking. */
+function initCampestre() {
+  // Contadores numéricos
+  animateCount(document.getElementById('countTotal'), CAMP_TOTAL);
+  animateCount(document.getElementById('countPop'),   CAMP_POP);
+  animateCount(document.getElementById('countPct'),   parseFloat(CAMP_PCT), '%', 1);
+
+  // Gráfico de rosca/doughnut
+  const campCtx = document.getElementById('campChart').getContext('2d');
+
+  new Chart(campCtx, {
+    type: 'doughnut',
+    data: {
+      labels: campestреData.map(d => d.nome),
+      datasets: [{
+        data:            campestреData.map(d => d.count),
+        backgroundColor: campestреData.map(d => d.color),
+        borderColor:     '#fff',
+        borderWidth:     3,
+        hoverOffset:     10,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      cutout: '62%',
+      animation: { duration: 900, easing: 'easeInOutQuart' },
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: {
+            font: { family: "'DM Sans', sans-serif", size: 11, weight: 600 },
+            color: '#374151',
+            padding: 14,
+            usePointStyle: true,
+            pointStyleWidth: 10,
+          }
+        },
+        tooltip: {
+          backgroundColor: 'rgba(17,24,39,.92)',
+          titleFont: { family: "'DM Sans', sans-serif", size: 12, weight: 700 },
+          bodyFont:  { family: "'DM Sans', sans-serif", size: 11 },
+          padding: 12,
+          cornerRadius: 8,
+          callbacks: {
+            label: (ctx) => {
+              const pct = ((ctx.parsed / CAMP_TOTAL) * 100).toFixed(1);
+              return ` ${ctx.parsed} famílias (${pct}%)`;
+            }
+          }
+        }
+      }
+    }
+  });
+
+  // Barras de ranking (ordenadas por quantidade)
+  const sorted  = [...campestреData].sort((a, b) => b.count - a.count);
+  const maxVal  = sorted[0].count;
+  const barsDiv = document.getElementById('campBars');
+
+  sorted.forEach(loc => {
+    const pct    = ((loc.count / CAMP_TOTAL) * 100).toFixed(1);
+    const widPct = ((loc.count / maxVal) * 100).toFixed(1);
+
+    const item = document.createElement('div');
+    item.className = 'camp-bar-item';
+    item.innerHTML = `
+      <div class="camp-bar-label">
+        <span class="camp-bar-name">${loc.nome}</span>
+        <div class="camp-bar-meta">
+          <span class="camp-bar-count">${loc.count} famílias</span>
+          <span class="camp-bar-pct">${pct}%</span>
+        </div>
+      </div>
+      <div class="camp-bar-track">
+        <div class="camp-bar-fill" data-width="${widPct}" style="background: ${loc.color};"></div>
+      </div>
+    `;
+    barsDiv.appendChild(item);
+  });
+}
+
+/**
+ * Dispara a inicialização da seção Campestre apenas quando
+ * ela entrar na viewport (lazy init).
+ */
+let campInitialized = false;
+
+const campObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !campInitialized) {
+      campInitialized = true;
+
+      initCampestre();
+
+      // Anima as barras de preenchimento após um pequeno delay
+      setTimeout(() => {
+        document.querySelectorAll('.camp-bar-fill').forEach(bar => {
+          bar.style.width = bar.dataset.width + '%';
+        });
+      }, 400);
+    }
+  });
+}, { threshold: 0.15 });
+
+const campSection = document.getElementById('campestre');
+if (campSection) campObserver.observe(campSection);
+
 
 /**
  * Adiciona um pequeno efeito de "ripple" (ondulação)

@@ -21,6 +21,7 @@
 </head>
 <body>
 
+  <!-- ===================== NAVBAR ===================== -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#home" class="nav-logo">
@@ -28,6 +29,7 @@
         <span>Auxílios Sociais</span>
       </a>
 
+      <!-- Menu desktop -->
       <ul class="nav-links" id="navLinks">
         <li><a href="#home" class="nav-link">Início</a></li>
         <li><a href="#o-que-sao" class="nav-link">O que são</a></li>
@@ -35,6 +37,7 @@
         <li><a href="#contras" class="nav-link">Contras</a></li>
         <li><a href="#distribuicao" class="nav-link">Distribuição</a></li>
         <li><a href="#mapa" class="nav-link">Mapa</a></li>
+        <li><a href="#campestre" class="nav-link">Campestre</a></li>
         <li><a href="#conclusao" class="nav-link">Conclusão</a></li>
         <li><a href="#creditos" class="nav-link">Créditos</a></li>
       </ul>
@@ -477,7 +480,7 @@
           <div class="map-info-item">
             <i class="fas fa-users"></i>
             <div>
-              <strong>~3.700 habitantes</strong>
+              <strong>~3.311 habitantes</strong>
               <span>Estimativa IBGE 2022</span>
             </div>
           </div>
@@ -505,6 +508,148 @@
     </div>
   </section>
 
+  <!-- ===================== CAMPESTRE DA SERRA — DADOS LOCAIS ===================== -->
+  <section class="section campestre-section" id="campestre">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag orange">Realidade Local</span>
+        <h2 class="section-title">Bolsa Família em Campestre da Serra</h2>
+        <p class="section-desc">
+          Um olhar próximo: como o programa chega às diferentes comunidades do nosso município.
+        </p>
+      </div>
+
+      <!-- Números gerais no topo -->
+      <div class="camp-overview reveal">
+        <div class="camp-big-stat">
+          <span class="camp-number" id="countTotal">0</span>
+          <span class="camp-unit">famílias beneficiadas</span>
+          <span class="camp-sublabel">no município (dados 2024)</span>
+        </div>
+        <div class="camp-big-stat">
+          <span class="camp-number" id="countPop">0</span>
+          <span class="camp-unit">habitantes</span>
+          <span class="camp-sublabel">estimativa IBGE</span>
+        </div>
+        <div class="camp-big-stat highlight-stat">
+          <span class="camp-number" id="countPct">0</span>
+          <span class="camp-unit">da população</span>
+          <span class="camp-sublabel">recebe o benefício</span>
+        </div>
+      </div>
+
+      <!-- Grid principal -->
+      <div class="camp-grid">
+
+        <!-- Gráfico de barras por localidade -->
+        <div class="camp-chart-card reveal">
+          <h3 class="camp-card-title">
+            <i class="fas fa-chart-bar"></i>
+            Distribuição por localidade
+          </h3>
+          <div class="camp-chart-container">
+            <canvas id="campChart"></canvas>
+          </div>
+          <p class="chart-note">
+            <i class="fas fa-circle-info"></i>
+            Dados levantados junto à comunidade local — 2024.
+          </p>
+        </div>
+
+        <!-- Barras visuais por localidade -->
+        <div class="camp-bars-card reveal">
+          <h3 class="camp-card-title">
+            <i class="fas fa-list-ol"></i>
+            Ranking por comunidade
+          </h3>
+          <div class="camp-bars" id="campBars">
+            <!-- Gerado pelo JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção de análise: pontos importantes e problemas -->
+      <div class="camp-analysis-grid">
+
+        <div class="camp-analysis-card reveal">
+          <div class="camp-analysis-header green-header">
+            <i class="fas fa-lightbulb"></i>
+            <h3>Pontos importantes</h3>
+          </div>
+          <ul class="camp-analysis-list">
+            <li>
+              <i class="fas fa-circle-check"></i>
+              <div>
+                <strong>Alta concentração no Centro</strong>
+                <p>A localidade de Campestre Centro concentra 34,4% de todos os beneficiários do município, refletindo maior densidade populacional e maior acesso ao cadastramento.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-circle-check"></i>
+              <div>
+                <strong>~10,5% da população é beneficiária</strong>
+                <p>Considerando uma população de 3.311 habitantes e 342 famílias cadastradas, estima-se que cerca de 1 em cada 10 moradores depende do Bolsa Família para complementar sua renda.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-circle-check"></i>
+              <div>
+                <strong>Interior com alta vulnerabilidade</strong>
+                <p>São Manuel e São Bernardo, juntos, somam 44,7% dos beneficiários — evidenciando que as áreas rurais e distantes do centro enfrentam maior situação de vulnerabilidade econômica.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-circle-check"></i>
+              <div>
+                <strong>Município predominantemente rural</strong>
+                <p>A distribuição geográfica dos beneficiários reflete o caráter rural de Campestre da Serra, onde a renda agropecuária é instável e sujeita a variações climáticas e de mercado.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="camp-analysis-card reveal">
+          <div class="camp-analysis-header red-header">
+            <i class="fas fa-triangle-exclamation"></i>
+            <h3>Problemas e desafios</h3>
+          </div>
+          <ul class="camp-analysis-list">
+            <li>
+              <i class="fas fa-circle-xmark red-icon"></i>
+              <div>
+                <strong>Perda do benefício ao mudar de cidade</strong>
+                <p>Famílias que se mudam para outros municípios precisam atualizar o Cadastro Único (CadÚnico) na nova cidade. O processo pode levar meses, deixando a família sem renda durante a transição — um risco real em migrações para cidades maiores como Caxias do Sul ou Porto Alegre.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-circle-xmark red-icon"></i>
+              <div>
+                <strong>Dificuldade de acesso ao CRAS</strong>
+                <p>O Centro de Referência de Assistência Social (CRAS) é o ponto de cadastramento. Moradores de localidades como Guacho e Serra do Meio precisam se deslocar por longas distâncias, enfrentando problemas de transporte e horários limitados de atendimento.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-circle-xmark red-icon"></i>
+              <div>
+                <strong>Condicionalidades difíceis no campo</strong>
+                <p>A exigência de frequência escolar e consultas de saúde pode ser difícil de cumprir em localidades rurais com escolas nucleadas ou postos de saúde com atendimento esporádico, gerando risco de cancelamento indevido do benefício.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-circle-xmark red-icon"></i>
+              <div>
+                <strong>Estigma social e subnotificação</strong>
+                <p>Em municípios pequenos, onde todos se conhecem, parte das famílias elegíveis pode evitar o cadastro por vergonha ou medo de julgamento social — deixando pessoas que têm direito ao benefício fora do programa.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
   <!-- ===================== CONCLUSÃO ===================== -->
   <section class="section section-alt" id="conclusao">
     <div class="container">
@@ -516,7 +661,7 @@
       <div class="conclusion-wrapper">
         <div class="conclusion-text reveal">
           <p>
-            Os auxílios sociais representam um dos pilares mais importantes e mais debatidos da política
+            Os auxílios sociais representam um dos pilares mais importantes — e mais debatidos — da política
             pública brasileira. Ao longo deste trabalho, pudemos observar que esses programas são ferramentas
             poderosas de combate à pobreza e à desigualdade, mas que também exigem gestão eficiente,
             transparência e políticas complementares para que seus efeitos sejam verdadeiramente transformadores.
@@ -535,7 +680,7 @@
             reformas profundas na educação, no mercado de trabalho e na estrutura tributária.
           </p>
           <p>
-            A discussão sobre auxílios sociais não é ideológica é, antes de tudo, uma questão de
+            A discussão sobre auxílios sociais não é ideológica — é, antes de tudo, uma questão de
             <strong>humanidade, responsabilidade e visão de futuro</strong>.
           </p>
         </div>
@@ -577,28 +722,28 @@
             <i class="fas fa-user-graduate"></i>
           </div>
           <h3>Lorenzo Cecatto Paim</h3>
-          <span class="credit-role">Aluno — Pesquisa e Desenvolvimento do Site</span>
+          <span class="credit-role">Aluno — Pesquisa e Redação</span>
         </div>
         <div class="credit-card reveal">
           <div class="credit-avatar">
             <i class="fas fa-user-graduate"></i>
           </div>
           <h3>Sofia Benato Rech</h3>
-          <span class="credit-role">Aluna — Análise e Dados com confecção do mapa</span>
+          <span class="credit-role">Aluna — Análise e Dados</span>
         </div>
         <div class="credit-card reveal">
           <div class="credit-avatar">
             <i class="fas fa-user-graduate"></i>
           </div>
           <h3>Pedro Michelon Siton</h3>
-          <span class="credit-role">Aluno — Análise e Dados</span>
+          <span class="credit-role">Aluno — Design e Revisão</span>
         </div>
       </div>
 
       <div class="credits-meta reveal">
         <div class="meta-item">
           <i class="fas fa-school"></i>
-          <span>Projeto Integrador de Humanas - Jenifer Siton</span>
+          <span>Projeto Integrador de Humanas</span>
         </div>
         <div class="meta-item">
           <i class="fas fa-book-open"></i>
@@ -606,7 +751,7 @@
         </div>
         <div class="meta-item">
           <i class="fas fa-calendar-days"></i>
-          <span>2026 — Campestre da Serra, RS</span>
+          <span>2024 — Campestre da Serra, RS</span>
         </div>
       </div>
 
@@ -633,7 +778,7 @@
       </div>
       <p class="footer-desc">
         Trabalho acadêmico de Projeto Integrador de Humanas.<br />
-        Campestre da Serra, Rio Grande do Sul — 2026.
+        Campestre da Serra, Rio Grande do Sul — 2024.
       </p>
       <div class="footer-authors">
         <span>Lorenzo Cecatto Paim</span>
@@ -642,7 +787,7 @@
         <span class="dot">·</span>
         <span>Pedro Michelon Siton</span>
       </div>
-      <p class="footer-copy">© 2026 — Produzido para fins educativos.</p>
+      <p class="footer-copy">© 2024 — Produzido para fins educativos.</p>
     </div>
   </footer>
 

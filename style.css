@@ -842,6 +842,249 @@ body {
   border-left: 3px solid var(--green-400);
 }
 
+/* ---- CAMPESTRE DA SERRA ---- */
+
+.campestre-section {
+  background: linear-gradient(160deg, #f0fdf4 0%, #eff6ff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.campestre-section::before {
+  content: '';
+  position: absolute;
+  top: -120px; right: -120px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(22,163,74,.07), transparent 70%);
+  pointer-events: none;
+}
+
+.section-tag.orange { background: #fff7ed; color: #ea580c; }
+
+/* Overview stats */
+.camp-overview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.camp-big-stat {
+  text-align: center;
+  padding: 32px 20px;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-100);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.camp-big-stat:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+
+.highlight-stat {
+  background: var(--gradient-main);
+  border-color: transparent;
+}
+
+.highlight-stat .camp-number,
+.highlight-stat .camp-unit,
+.highlight-stat .camp-sublabel { color: var(--white) !important; }
+
+.camp-number {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--gray-900);
+  line-height: 1;
+}
+
+.highlight-stat .camp-number { font-size: 2.4rem; }
+
+.camp-unit {
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--green-500);
+}
+
+.camp-sublabel {
+  font-size: .76rem;
+  color: var(--gray-400);
+}
+
+/* Grid principal */
+.camp-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 28px;
+  margin-bottom: 40px;
+}
+
+.camp-chart-card,
+.camp-bars-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-100);
+}
+
+.camp-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.camp-card-title i { color: var(--green-500); }
+
+.camp-chart-container { position: relative; height: 280px; }
+
+/* Barras de ranking */
+.camp-bars { display: flex; flex-direction: column; gap: 16px; }
+
+.camp-bar-item { display: flex; flex-direction: column; gap: 6px; }
+
+.camp-bar-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.camp-bar-name {
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+.camp-bar-meta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.camp-bar-count {
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--gray-700);
+}
+
+.camp-bar-pct {
+  font-size: .75rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 100px;
+  background: var(--green-100);
+  color: var(--green-500);
+}
+
+.camp-bar-track {
+  height: 10px;
+  background: var(--gray-100);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.camp-bar-fill {
+  height: 100%;
+  border-radius: 100px;
+  width: 0; /* animado pelo JS */
+  transition: width 1s cubic-bezier(.4,0,.2,1);
+}
+
+/* Grid de análise */
+.camp-analysis-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.camp-analysis-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-100);
+}
+
+.camp-analysis-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 24px;
+  font-size: 1rem;
+}
+
+.camp-analysis-header h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.camp-analysis-header i { font-size: 1.1rem; color: var(--white); }
+
+.green-header { background: linear-gradient(90deg, #15803d, #16a34a); }
+.red-header   { background: linear-gradient(90deg, #b91c1c, #ef4444); }
+
+.camp-analysis-list {
+  list-style: none;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.camp-analysis-list li {
+  display: flex;
+  gap: 14px;
+  padding: 16px 8px;
+  border-bottom: 1px solid var(--gray-100);
+  align-items: flex-start;
+}
+
+.camp-analysis-list li:last-child { border-bottom: none; }
+
+.camp-analysis-list > li > i {
+  font-size: 1rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+  color: var(--green-500);
+}
+
+.red-icon { color: var(--red-500) !important; }
+
+.camp-analysis-list div strong {
+  display: block;
+  font-size: .88rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 4px;
+}
+
+.camp-analysis-list div p {
+  font-size: .82rem;
+  color: var(--gray-600);
+  line-height: 1.55;
+}
+
+/* Responsivo campestre */
+@media (max-width: 1024px) {
+  .camp-grid,
+  .camp-analysis-grid { grid-template-columns: 1fr; }
+  .camp-overview { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+  .camp-overview { grid-template-columns: 1fr; }
+  .camp-number { font-size: 2.2rem; }
+}
+
 /* ---- FOOTER ---- */
 .footer {
   background: var(--gray-950);
