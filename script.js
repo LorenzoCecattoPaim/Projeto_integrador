@@ -266,12 +266,19 @@ document.addEventListener('DOMContentLoaded', () => {
  * Dados reais levantados sobre beneficiários do Bolsa Família
  * nas diferentes localidades de Campestre da Serra — RS (2024).
  */
+/**
+ * pop: população da localidade (Censo 2011 — mais recente disponível por região)
+ * count: famílias beneficiadas pelo Bolsa Família (2024)
+ * Percentual calculado sobre: count / pop * 100
+ * (famílias ≈ pessoas, pois o dado de beneficiários aqui representa famílias,
+ *  então o % indica proporção de famílias em relação à pop. total da localidade)
+ */
 const campestреData = [
-  { nome: 'Campestre (Centro)', count: 119, color: '#16a34a' },
-  { nome: 'São Manuel',         count: 68,  color: '#0ea5e9' },
-  { nome: 'São Bernardo',       count: 84,  color: '#a855f7' },
-  { nome: 'Serra do Meio',      count: 41,  color: '#f59e0b' },
-  { nome: 'Guacho',             count: 30,  color: '#14b8a6' },
+  { nome: 'Campestre (Centro)', count: 119, pop: 858,  color: '#16a34a' },
+  { nome: 'São Manoel',         count: 68,  pop: 532,  color: '#0ea5e9' },
+  { nome: 'São Bernardo',       count: 84,  pop: 654,  color: '#a855f7' },
+  { nome: 'Serra do Meio',      count: 41,  pop: 877,  color: '#f59e0b' },
+  { nome: 'Guacho',             count: 30,  pop: 274,  color: '#14b8a6' },
 ];
 
 const CAMP_POP   = 3311;
@@ -351,14 +358,17 @@ function initCampestre() {
     }
   });
 
-  // Barras de ranking (ordenadas por quantidade)
-  const sorted  = [...campestреData].sort((a, b) => b.count - a.count);
-  const maxVal  = sorted[0].count;
-  const barsDiv = document.getElementById('campBars');
+  // Barras de ranking (ordenadas por % regional — mais revelador)
+  const sorted  = [...campestреData].sort((a, b) =>
+    (b.count / b.pop) - (a.count / a.pop)
+  );
+  const maxPctVal = sorted[0].count / sorted[0].pop;
+  const barsDiv   = document.getElementById('campBars');
 
   sorted.forEach(loc => {
-    const pct    = ((loc.count / CAMP_TOTAL) * 100).toFixed(1);
-    const widPct = ((loc.count / maxVal) * 100).toFixed(1);
+    const pctDoTotal    = ((loc.count / CAMP_TOTAL) * 100).toFixed(1);
+    const pctDaRegiao   = ((loc.count / loc.pop)    * 100).toFixed(1);
+    const widPct        = ((loc.count / loc.pop) / maxPctVal * 100).toFixed(1);
 
     const item = document.createElement('div');
     item.className = 'camp-bar-item';
@@ -367,8 +377,12 @@ function initCampestre() {
         <span class="camp-bar-name">${loc.nome}</span>
         <div class="camp-bar-meta">
           <span class="camp-bar-count">${loc.count} famílias</span>
-          <span class="camp-bar-pct">${pct}%</span>
+          <span class="camp-bar-pct camp-bar-pct--regional" title="% da população da localidade">${pctDaRegiao}% da região</span>
+          <span class="camp-bar-pct" title="% dos beneficiários do município">${pctDoTotal}% do total</span>
         </div>
+      </div>
+      <div class="camp-bar-sublabel">
+        <span class="camp-bar-pop"><i class="fas fa-users"></i> ${loc.pop.toLocaleString('pt-BR')} hab. (2011)</span>
       </div>
       <div class="camp-bar-track">
         <div class="camp-bar-fill" data-width="${widPct}" style="background: ${loc.color};"></div>

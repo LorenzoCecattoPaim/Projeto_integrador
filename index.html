@@ -518,7 +518,7 @@
           Um olhar próximo: como o programa chega às diferentes comunidades do nosso município.
         </p>
       </div>
-
+ 
       <!-- Números gerais no topo -->
       <div class="camp-overview reveal">
         <div class="camp-big-stat">
@@ -529,7 +529,7 @@
         <div class="camp-big-stat">
           <span class="camp-number" id="countPop">0</span>
           <span class="camp-unit">habitantes</span>
-          <span class="camp-sublabel">estimativa IBGE</span>
+          <span class="camp-sublabel">estimativa IBGE 2022</span>
         </div>
         <div class="camp-big-stat highlight-stat">
           <span class="camp-number" id="countPct">0</span>
@@ -537,36 +537,120 @@
           <span class="camp-sublabel">recebe o benefício</span>
         </div>
       </div>
-
-      <!-- Grid principal -->
+ 
+      <!-- Grid principal: gráfico + ranking -->
       <div class="camp-grid">
-
-        <!-- Gráfico de barras por localidade -->
+ 
+        <!-- Gráfico de rosca por localidade -->
         <div class="camp-chart-card reveal">
           <h3 class="camp-card-title">
-            <i class="fas fa-chart-bar"></i>
-            Distribuição por localidade
+            <i class="fas fa-chart-pie"></i>
+            Distribuição de beneficiários por localidade
           </h3>
           <div class="camp-chart-container">
             <canvas id="campChart"></canvas>
           </div>
           <p class="chart-note">
             <i class="fas fa-circle-info"></i>
-            Dados aproximados levantados.
+            Dados levantados no CRAS
           </p>
         </div>
-
-        <!-- Barras visuais por localidade -->
+ 
+        <!-- Ranking com barras + pop + percentual regional -->
         <div class="camp-bars-card reveal">
           <h3 class="camp-card-title">
-            <i class="fas fa-list-ol"></i>
-            Ranking por comunidade
+            <i class="fas fa-arrow-up-wide-short"></i>
+            Ranking por proporção regional
           </h3>
+          <p class="camp-bars-subtitle">Ordenado por % de beneficiários em relação à população local</p>
           <div class="camp-bars" id="campBars">
             <!-- Gerado pelo JS -->
           </div>
         </div>
       </div>
+ 
+      <!-- Tabela comparativa completa -->
+      <div class="camp-table-wrapper reveal">
+        <h3 class="camp-card-title">
+          <i class="fas fa-table"></i>
+          Dados completos por localidade
+        </h3>
+        <p class="camp-table-note">
+          <i class="fas fa-circle-info"></i>
+          População: dados de 2011 (mais recente disponível por localidade). Beneficiários: levantamento 2024.
+          O percentual é calculado sobre o número de famílias beneficiadas em relação ao total de habitantes da localidade —
+          uma estimativa que pode incluir mais de um membro por família.
+        </p>
+        <div class="camp-table-scroll">
+          <table class="camp-table">
+            <thead>
+              <tr>
+                <th>Localidade</th>
+                <th>Pop. (2011)</th>
+                <th>Beneficiários</th>
+                <th>% da localidade</th>
+                <th>% do município</th>
+                <th>Intensidade</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Ordenado por % regional (maior vulnerabilidade relativa primeiro) -->
+              <tr class="row-highlight">
+                <td><span class="dot-color" style="background:#14b8a6;"></span>Guacho</td>
+                <td>274</td>
+                <td>30</td>
+                <td><strong class="pct-badge" style="--bc:#14b8a6;">10,9%</strong></td>
+                <td>8,8%</td>
+                <td><div class="intensity-bar"><div style="width:100%;background:#14b8a6;"></div></div></td>
+              </tr>
+              <tr>
+                <td><span class="dot-color" style="background:#0ea5e9;"></span>São Manoel</td>
+                <td>532</td>
+                <td>68</td>
+                <td><strong class="pct-badge" style="--bc:#0ea5e9;">12,8%</strong></td>
+                <td>19,9%</td>
+                <td><div class="intensity-bar"><div style="width:85%;background:#0ea5e9;"></div></div></td>
+              </tr>
+              <tr>
+                <td><span class="dot-color" style="background:#a855f7;"></span>São Bernardo</td>
+                <td>654</td>
+                <td>84</td>
+                <td><strong class="pct-badge" style="--bc:#a855f7;">12,8%</strong></td>
+                <td>24,6%</td>
+                <td><div class="intensity-bar"><div style="width:85%;background:#a855f7;"></div></div></td>
+              </tr>
+              <tr>
+                <td><span class="dot-color" style="background:#16a34a;"></span>Campestre (Centro)</td>
+                <td>858</td>
+                <td>119</td>
+                <td><strong class="pct-badge" style="--bc:#16a34a;">13,9%</strong></td>
+                <td>34,8%</td>
+                <td><div class="intensity-bar"><div style="width:93%;background:#16a34a;"></div></div></td>
+              </tr>
+              <tr>
+                <td><span class="dot-color" style="background:#f59e0b;"></span>Serra do Meio</td>
+                <td>877</td>
+                <td>41</td>
+                <td><strong class="pct-badge" style="--bc:#f59e0b;">4,7%</strong></td>
+                <td>12,0%</td>
+                <td><div class="intensity-bar"><div style="width:31%;background:#f59e0b;"></div></div></td>
+              </tr>
+              <tr class="row-total">
+                <td><strong>Total</strong></td>
+                <td><strong>3.195</strong> <span class="row-total-note">(2011)</span></td>
+                <td><strong>342</strong></td>
+                <td><strong>10,7%</strong></td>
+                <td><strong>100%</strong></td>
+                <td>—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+ 
+
+    </div>
+  </section>
 
       <!-- Seção de análise: pontos importantes e problemas 
       <div class="camp-analysis-grid">
@@ -647,8 +731,6 @@
 
       </div>-->
 
-    </div>
-  </section>
 
   <!-- ===================== CONCLUSÃO ===================== -->
   <section class="section section-alt" id="conclusao">

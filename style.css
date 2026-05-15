@@ -1073,6 +1073,143 @@ body {
   line-height: 1.55;
 }
 
+.camp-bars-subtitle {
+  font-size: .8rem;
+  color: var(--gray-400);
+  margin-top: -12px;
+  margin-bottom: 18px;
+}
+
+.camp-bar-sublabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.camp-bar-pop {
+  font-size: .75rem;
+  color: var(--gray-400);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.camp-bar-pop i { font-size: .68rem; }
+
+.camp-bar-pct--regional {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+/* Tabela */
+.camp-table-wrapper {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-100);
+  margin-bottom: 36px;
+}
+
+.camp-table-note {
+  font-size: .78rem;
+  color: var(--gray-400);
+  margin-top: 6px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 7px;
+  align-items: flex-start;
+  line-height: 1.5;
+}
+
+.camp-table-note i { margin-top: 2px; flex-shrink: 0; color: var(--blue-400); }
+
+.camp-table-scroll { overflow-x: auto; }
+
+.camp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .88rem;
+}
+
+.camp-table thead tr {
+  background: var(--gray-50);
+  border-bottom: 2px solid var(--gray-200);
+}
+
+.camp-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: .75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  color: var(--gray-500);
+  white-space: nowrap;
+}
+
+.camp-table td {
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--gray-100);
+  color: var(--gray-700);
+  vertical-align: middle;
+}
+
+.camp-table tbody tr:hover { background: var(--gray-50); }
+
+.row-highlight { background: #f0fdf4; }
+.row-highlight:hover { background: #dcfce7 !important; }
+
+.row-total {
+  background: var(--gray-50);
+  border-top: 2px solid var(--gray-300) !important;
+}
+
+.row-total td { color: var(--gray-900); border-bottom: none; }
+
+.row-total-note { font-size: .72rem; color: var(--gray-400); font-weight: 400; }
+
+.dot-color {
+  display: inline-block;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.pct-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-size: .78rem;
+  font-weight: 700;
+  background: color-mix(in srgb, var(--bc) 14%, transparent);
+  color: var(--bc);
+  border: 1px solid color-mix(in srgb, var(--bc) 30%, transparent);
+}
+
+.intensity-bar {
+  width: 90px;
+  height: 8px;
+  background: var(--gray-100);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.intensity-bar div {
+  height: 100%;
+  border-radius: 100px;
+  opacity: .8;
+}
+
+/* Responsivo tabela */
+@media (max-width: 768px) {
+  .camp-table th:nth-child(5),
+  .camp-table td:nth-child(5) { display: none; }
+}
+
 /* Responsivo campestre */
 @media (max-width: 1024px) {
   .camp-grid,
